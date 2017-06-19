@@ -25,7 +25,7 @@ keen.add_event("boil_temp", {
 mashTemp = phController.get_temp()
 
 keen.add_event("mash_temp", {
-	"temp": mashtemp
+	"temp": mashTemp
 	})
 
 #Get Mash Tun PH
