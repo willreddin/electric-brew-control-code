@@ -9,13 +9,14 @@ keen.read_key = "5152D8ED91BE5277A812764FE1200A4D4981E0459A57BBEF5D27B257209ABDD
 phController = supmeaph.SupmeaPH('/dev/ttyS0',2)
 
 mashTemp = phController.get_temp()
+mashTemp = round(float(mashTemp/10), 2)
 
 keen.add_event("mash_temp", {
 	"temp": mashTemp
 	})
 
-#Get Mash Tun PH
 mashPH = phController.get_ph()
+mashPH = round(float(mashPH)/100, 2)
 
 keen.add_event("mash_ph", {
 	"ph": mashPH
