@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 
-import redlionPAX2C
+import EurothermP116
 import minimalmodbus
 import supmeaph
 from keenVariables import *
 
-tempController = redlionPAX2C.redlionPAX2C('”/dev/ttyAMA0″',1)
+tempController = EurothermP116.EurothermP116('”/dev/ttyAMA0″',1)
 
 phController = supmeaph.supmeaph('”/dev/ttyAMA0″',2)
 
 #Get HLT/Boil temp
 boilTemp = tempController.get_pv()
-boilSetTemp = tempController.get_active_sp()
+boilSetTemp = tempController.get_sp()
 
 keen.add_event("boil_temp", {
 	"temp": boilTemp,
