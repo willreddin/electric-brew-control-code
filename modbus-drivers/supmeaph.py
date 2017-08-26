@@ -7,11 +7,11 @@ class SupmeaPH( minimalmodbus.Instrument):
     
     def get_ph(self):
         """Return PH value"""
-        return self.read_register(0,2)
+        return self.read_register(0,0)
     
     def get_temp(self):
         """Return temp from controller"""
-        return self.read_register(1,1)
+        return self.read_register(1,0)
     
     def get_ORP(self):
         """Return ORP value"""
